@@ -7,23 +7,33 @@ import {
   Form,
   Modal,
   Label,
+  Grid,
+  Header,
+  Search,
+  Divider,
 } from "semantic-ui-react";
 
 function Navbar() {
   return (
     <>
-      <Input
-        action={{
-          icon: "search",
-          onClick: () => console.log("An action was clicked!"),
-        }}
-        actionPosition="right"
-        placeholder="Search..."
-      />
-      <Button content="Like" icon={{ name: "like", color: "red" }} />
-      <br />
-     
-  
+      <Segment placeholder>
+        <Grid columns={1} stackable textAlign="center">
+          <Grid.Row verticalAlign="middle">
+            <Grid.Column>
+              <Header icon>
+                <Icon name="world" />
+                Which City?
+              </Header>
+
+              <Search placeholder="Search..." />
+              <br />
+              <Button fluid circular>
+                Search
+              </Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
     </>
   );
 }
