@@ -1,19 +1,21 @@
+import { getSuggestedQuery } from "@testing-library/react";
 import React from "react";
 import {
   Segment,
-  Input,
   Button,
   Icon,
-  Form,
-  Modal,
-  Label,
   Grid,
   Header,
   Search,
-  Divider,
+  Form,
+  Input,
 } from "semantic-ui-react";
 
-function Navbar() {
+function Navbar({query, setQuery, searchFunc}) {
+
+
+
+
   return (
     <>
       <Segment placeholder>
@@ -21,15 +23,16 @@ function Navbar() {
           <Grid.Row verticalAlign="middle">
             <Grid.Column>
               <Header icon>
-                <Icon name="world" />
-                Which City?
+                <Icon name="cloud" />
+                Weather App
               </Header>
-
-              <Search placeholder="Search..." />
-              <br />
-              <Button fluid circular>
-                Search
-              </Button>
+              <Form onSubmit={searchFunc} >
+                <Input placeholder="Weather in your city..." value={query} onChange={(e)=>{setQuery(e.target.value)}} />
+                <br />
+                <Button type="submit" fluid circular>
+                  Search
+                </Button>
+              </Form>
             </Grid.Column>
           </Grid.Row>
         </Grid>
