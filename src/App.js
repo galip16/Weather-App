@@ -16,9 +16,13 @@ function App() {
 
   const searchFunc = async () => {
 
-    await fetch(url).then(result => result.json()).then(data => setWeatherData(data));
+    await fetch(url).then(result => result.json()).then(data => {
+      setWeatherData(data);
+      console.log(data);
+    });
 
     setQuery("")
+
 
 
 

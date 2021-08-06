@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
 
 function Result({ weatherData }) {
@@ -10,23 +10,26 @@ function Result({ weatherData }) {
           wrapped
           ui={false}
         />
-        <Card.Content>
+        <Card.Content textAlign="center">
           <Card.Header>
             {" "}
             {weatherData.name ? weatherData.name : "city not found"}{" "}
           </Card.Header>
           <Card.Meta>
-            <span className="date">Joined in 2015</span>
+            <span className="date">{weatherData.sys.country}</span>
           </Card.Meta>
           <Card.Description>
-            Matthew is a musician living in Nashville.
+            {" "}
+            {Math.round(weatherData.main.temp - 272)}
+            <sup>&deg;</sup>
           </Card.Description>
         </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name="user" />
-            22 Friends
-          </a>
+        <Card.Content textAlign="center" extra>
+          {" "}
+          <Image
+            src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+          />
+          {weatherData.weather[0].description}
         </Card.Content>
       </Card>
     </div>
