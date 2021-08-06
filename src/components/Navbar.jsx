@@ -5,7 +5,6 @@ import {
   Icon,
   Grid,
   Header,
-  Search,
   Form,
   Input,
 } from "semantic-ui-react";
