@@ -4,10 +4,9 @@ import { Card, Image } from "semantic-ui-react";
 function Result({ weatherData, img }) {
   return (
     <div>
-      {" "}
       {!weatherData.name ? (
         <Card centered>
-          <Card.Header>"City not found "</Card.Header>{" "}
+          <Card.Header>"City not found "</Card.Header>
         </Card>
       ) : (
         <Card centered>

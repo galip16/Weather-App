@@ -22,15 +22,14 @@ function Navbar({ query, setQuery, searchFunc }) {
               </Header>
               <Form onSubmit={searchFunc}>
                 <Input
-                  
                   placeholder="Weather in your city..."
                   value={query}
                   onChange={(e) => {
                     setQuery(e.target.value);
                   }}
                 />
-                <br />
-                <Button type="submit" fluid circular>
+
+                <Button className="searchButton" type="submit" fluid circular>
                   Search
                 </Button>
               </Form>

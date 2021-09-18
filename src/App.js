@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Result from './components/Result';
 
 function App() {
   const [query, setQuery] = useState("");
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState("");
 
   const [img, setImg] = useState("")
 
@@ -24,6 +24,8 @@ function App() {
 
     setQuery("")
   }
+
+
 
   return (
     <>
